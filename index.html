@@ -3,28 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List Life Dashboard</title>
+    <title>Life Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <header class="greeting" id="greeting">
-            <!-- Greeting component will be rendered here -->
-        </header>
-        
-        <section class="timer" id="timer">
-            <!-- Timer component will be rendered here -->
-        </section>
-        
-        <section class="tasks" id="tasks">
-            <!-- Task component will be rendered here -->
-        </section>
-        
-        <section class="quicklinks" id="quicklinks">
-            <!-- QuickLinks component will be rendered here -->
-        </section>
-    </div>
+    <div class="background-canvas"></div>
     
-    <script type="module" src="js/app.js"></script>
+    <div class="dashboard-wrapper">
+        <header class="top-bar">
+            <div class="user-settings">
+                <input type="text" id="user-name-input" placeholder="Enter your name" autocomplete="off">
+            </div>
+            <button id="theme-toggle" class="btn-icon">🌓 Toggle Theme</button>
+        </header>
+
+        <main class="grid-layout">
+            <section class="widget greeting-widget">
+                <div class="time-block">
+                    <h1 id="clock">00:00</h1>
+                    <h2 id="date-display">Date</h2>
+                </div>
+                <h3 id="greeting-message">Hello.</h3>
+            </section>
+
+            <div class="bento-grid">
+                <section class="widget">
+                    <div class="widget-header">
+                        <h3>Focus Timer</h3>
+                        <input type="number" id="pomodoro-time" min="1" max="60" title="Set Minutes">
+                    </div>
+                    <div class="timer-display" id="timer-display">25:00</div>
+                    <div class="button-group">
+                        <button id="timer-start" class="btn">Start</button>
+                        <button id="timer-stop" class="btn btn-outline">Stop</button>
+                        <button id="timer-reset" class="btn btn-outline">Reset</button>
+                    </div>
+                </section>
+
+                <section class="widget task-widget">
+                    <div class="widget-header">
+                        <h3>Tasks</h3>
+                        <button id="sort-task-btn" class="btn btn-small btn-outline">Sort A-Z</button>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="task-input" placeholder="Add a new task...">
+                        <button id="add-task-btn" class="btn">Add</button>
+                    </div>
+                    <p id="task-error" class="error-msg"></p>
+                    <ul id="task-list" class="list"></ul>
+                </section>
+
+                <section class="widget">
+                    <div class="widget-header">
+                        <h3>Quick Links</h3>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="link-name" placeholder="Site Name">
+                        <input type="url" id="link-url" placeholder="https://...">
+                        <button id="add-link-btn" class="btn">Save</button>
+                    </div>
+                    <ul id="quick-links-list" class="list link-grid"></ul>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
 </body>
 </html>

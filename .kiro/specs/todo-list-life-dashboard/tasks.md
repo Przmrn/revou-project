@@ -120,7 +120,7 @@ The design includes 18 correctness properties for property-based testing. Each p
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 6. Implement Task module
-  - [-] 6.1 Create TaskModule with CRUD operations
+  - [x] 6.1 Create TaskModule with CRUD operations
     - Implement `init(containerElement)` method
     - Implement `addTask(text)` method with validation (non-empty, max 500 chars)
     - Implement `editTask(id, newText)` method with validation
