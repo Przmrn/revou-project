@@ -1,0 +1,28 @@
+{
+  "name": "todo-list-life-dashboard",
+  "version": "1.0.0",
+  "description": "A client-side web application for daily productivity with time display, focus timer, task management, and quick links",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "test:ui": "vitest --ui",
+    "test:seed": "cross-env VITEST_SEED=${SEED:-42} vitest run"
+  },
+  "keywords": [
+    "todo",
+    "dashboard",
+    "productivity",
+    "timer",
+    "pomodoro"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@vitest/ui": "^1.0.0",
+    "fast-check": "^3.15.0",
+    "happy-dom": "^12.10.0",
+    "vitest": "^1.0.0"
+  }
+}

@@ -1,0 +1,149 @@
+/* To-Do List Life Dashboard - Styles */
+/* Swiss Design Principles: Grid-based layout, minimal color palette, sans-serif typography */
+
+:root {
+  /* Color Palette */
+  --color-primary: #000000;
+  --color-secondary: #FF0000;
+  --color-background: #FFFFFF;
+  --color-text: #000000;
+  --color-text-muted: #666666;
+  --color-border: #CCCCCC;
+  
+  /* Typography */
+  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --font-size-small: 14px;
+  --font-size-large: 20px;
+  --font-size-xlarge: 32px;
+  --line-height: 1.5;
+  
+  /* Spacing System (8px base unit) */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--space-md);
+}
+
+.greeting {
+  grid-column: 1 / 13;
+}
+
+.timer {
+  grid-column: 1 / 7;
+}
+
+.tasks {
+  grid-column: 7 / 13;
+}
+
+.quicklinks {
+  grid-column: 1 / 13;
+}
+
+/* Greeting Component Styles */
+.greeting {
+  text-align: center;
+  padding: var(--space-lg) 0;
+}
+
+.greeting-message {
+  font-size: var(--font-size-xlarge);
+  font-weight: 300;
+  margin-bottom: var(--space-sm);
+  letter-spacing: -0.02em;
+}
+
+.greeting-time {
+  display: block;
+  font-size: 4rem;
+  font-weight: 300;
+  margin-bottom: var(--space-xs);
+  letter-spacing: -0.03em;
+}
+
+.greeting-date {
+  font-size: var(--font-size-large);
+  color: var(--color-text-muted);
+  font-weight: 300;
+}
+
+/* Timer Component Styles */
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  min-height: 300px;
+}
+
+.timer-display {
+  font-size: 5rem;
+  font-weight: 300;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-primary);
+}
+
+.timer-controls {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.timer-button {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  padding: var(--space-xs) var(--space-md);
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-background);
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+.timer-button:hover:not(:disabled) {
+  background-color: var(--color-primary);
+  color: var(--color-background);
+}
+
+.timer-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.timer-button:focus {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 2px;
+}
+
+/* Placeholder styles - will be expanded in later tasks */
